@@ -1,0 +1,61 @@
+
+@import "tailwindcss";
+
+/* CHETSA Design System */
+ 
+@theme {
+  /* CHETSA Brand */
+  --color-primary: #205480;
+  --color-primary-dark: #163F62;
+  --color-secondary: #2899C0;
+  --color-accent: #6D9429;
+  --color-brand-pink: #A21A63;
+  --color-brand-teal: #438D99;
+
+  /* Typography */
+  --color-heading: #183B56;
+  --color-body: #334155;
+  --color-muted: #64748B;
+
+  /* Backgrounds */
+  --color-page: #FFFFFF;
+  --color-section: #F4F9FB;
+
+  /* Borders */
+  --color-border-light: #E2E8F0;
+
+  /* Font */
+  --font-sans: "Inter", sans-serif;
+}
+
+/* Global Styles */
+@layer base {
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    color: var(--color-body);
+    background: var(--color-page);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Reusable Classes */
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .section-space {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center
+           rounded-lg bg-primary px-6 py-3
+           font-semibold text-white
+           transition-colors hover:bg-primary-dark;
+  }
+}
