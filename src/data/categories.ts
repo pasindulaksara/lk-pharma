@@ -12,7 +12,7 @@ export const categories: Category[] = [
     id: 1,
     name: "Medical Devices & Diagnostics",
     slug: "medical-devices-diagnostics",
-    image: "/images/categories/medical-devices.jpg",
+    image: "/images/categories/medical-devices.png",
     description: "Medical technology and diagnostic solutions.",
   },
   {
@@ -34,21 +34,21 @@ export const categories: Category[] = [
     id: 4,
     name: "Cryogenic & Cold-Chain Solutions",
     slug: "cryogenic-cold-chain-solutions",
-    image: "/images/categories/laboratory-consumables.jpg",
+    image: "/images/categories/hospital-consumables.png",
     description: "Low-temperature storage and sample preservation.",
   },
   {
     id: 5,
     name: "Life Science Reagents & Chemicals",
     slug: "life-science-reagents-chemicals",
-    image: "/images/categories/diagnostics.jpg",
+    image: "/images/categories/diagnostics.png",
     description: "Reagents and materials for research and diagnostics.",
   },
   {
     id: 6,
     name: "Laboratory Software & Digital Solutions and Services",
     slug: "laboratory-software-digital-solutions-services",
-    image: "/images/categories/laboratory-equipment.jpg",
+    image: "/images/categories/software.png",
     description:
       "Laboratory software, digital solutions and technical services.",
   },

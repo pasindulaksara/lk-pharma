@@ -1,6 +1,8 @@
 
+import { useState } from "react";
 import { Link } from "react-router";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight, FiImage } from "react-icons/fi";
+
 import type { Product } from "../../data/products";
 
 interface ProductCardProps {
@@ -10,6 +12,11 @@ interface ProductCardProps {
 export default function ProductCard({
   product,
 }: ProductCardProps) {
+  const [imageError, setImageError] = useState(false);
+
+  const hasImage =
+    Boolean(product.image?.trim()) && !imageError;
+
   return (
     <article
       className="
@@ -34,17 +41,44 @@ export default function ProductCard({
             rounded-xl bg-[#F8FAFC]
           "
         >
-          <img
-            src={product.image}
-            alt={product.name}
-            loading="lazy"
-            className="
-              h-full w-full object-contain
-              p-7 mix-blend-multiply
-              transition-transform duration-500
-              ease-out group-hover:scale-[1.045]
-            "
-          />
+          {hasImage ? (
+            <img
+              src={product.image}
+              alt={product.name}
+              loading="lazy"
+              referrerPolicy="no-referrer"
+              onError={() => setImageError(true)}
+              className="
+                h-full w-full object-contain
+                p-7 mix-blend-multiply
+                transition-transform duration-500
+                ease-out group-hover:scale-[1.045]
+              "
+            />
+          ) : (
+            <div
+              className="
+                flex h-full flex-col items-center
+                justify-center gap-3 p-6
+                text-center
+              "
+            >
+              <div
+                className="
+                  flex h-14 w-14 items-center
+                  justify-center rounded-xl
+                  border border-slate-200 bg-white
+                  text-slate-400
+                "
+              >
+                <FiImage size={23} />
+              </div>
+
+              <span className="text-xs font-medium text-slate-400">
+                Product image unavailable
+              </span>
+            </div>
+          )}
 
           {/* Hover action */}
           <span
